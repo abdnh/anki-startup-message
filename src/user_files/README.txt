@@ -1,0 +1,1 @@
+You customize your startup message's styles in startup.css
