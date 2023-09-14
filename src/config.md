@@ -1,1 +1,0 @@
--   `message`: Message to show at startup.

@@ -6,7 +6,6 @@ from aqt import mw
 from aqt.qt import *
 from aqt.webview import AnkiWebView
 
-from ..config import config
 from ..consts import consts
 
 
@@ -30,6 +29,9 @@ class Dialog(ankiutils.gui.dialog.Dialog):
 
     def _on_loaded(self) -> None:
         url_base = f"{mw.serverURL()}{self.web_base}"
+        message = (consts.dir / "user_files" / "message.html").read_text(
+            encoding="utf-8"
+        )
         self.web.eval(
             """
         const style = document.createElement('link');
@@ -41,5 +43,5 @@ class Dialog(ankiutils.gui.dialog.Dialog):
         p.innerHTML = %s;
         document.body.appendChild(p);
         """
-            % (url_base, json.dumps(config["message"]))
+            % (url_base, json.dumps(message))
         )

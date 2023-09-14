@@ -2,6 +2,9 @@
 
 This add-on allows you to set a custom message to show up when Anki starts.
 
+Put your message in user_files/message.html.
+You can also customize the styles in user_files/startup.css.
+
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md) for a list of changes.
