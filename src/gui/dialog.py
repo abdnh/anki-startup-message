@@ -38,7 +38,7 @@ class Dialog(ankiutils.gui.dialog.Dialog):
         document.head.appendChild(style);
         const p = document.createElement('p');
         p.id = 'message';
-        p.textContent = %s;
+        p.innerHTML = %s;
         document.body.appendChild(p);
         """
             % (url_base, json.dumps(config["message"]))
