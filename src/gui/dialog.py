@@ -1,3 +1,4 @@
+import json
 from typing import Optional
 
 import ankiutils.gui.dialog
@@ -37,8 +38,8 @@ class Dialog(ankiutils.gui.dialog.Dialog):
         document.head.appendChild(style);
         const p = document.createElement('p');
         p.id = 'message';
-        p.textContent = '%s';
+        p.textContent = %s;
         document.body.appendChild(p);
         """
-            % (url_base, config["message"])
+            % (url_base, json.dumps(config["message"]))
         )
